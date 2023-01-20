@@ -6,14 +6,12 @@
     <h1>Portfolio</h1>
 
     <ul>
-        @if ($portfolio)
-            @foreach ($portfolio as $portfolioItem)
-                <li>{{ $portfolioItem['title'] }}</li>
-            @endforeach
-        @else
+        @forelse($projects as $project)
+            <li>{{ $project -> title }}</li>
+        @empty
             <li>No hay proyectos para mostrar</li>
-        @endif
-
+        @endforelse
+        {{ $projects->links() }}
     </ul>
 
 @endsection
