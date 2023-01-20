@@ -16,7 +16,7 @@ Route::view('/quienes-somos', 'about')->name('about');
 // Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
 // Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
 Route::get('/portafolio', 'App\Http\Controllers\ProjectController@index') ->name('projects.index');
-Route::get('/portafolio]/{id}', 'App\Http\Controllers\ProjectController@show') ->name('projects.show');
+Route::get('/portafolio]/{project}', 'App\Http\Controllers\ProjectController@show') ->name('projects.show');
 
 
 Route::view('/contacto', 'contact')->name('contact');
