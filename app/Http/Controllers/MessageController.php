@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MessageReceived;
 
-class Messagescontroller extends Controller
+class MessageController extends Controller
 {
     public function store()
     {
