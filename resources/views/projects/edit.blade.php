@@ -5,7 +5,8 @@
 @section('content')
     <h1>Editar proyecto</h1>
 
-    @include('partials.validation-errors')
+    @include('partials.session-status')
+
 
     <form method="POST" action="{{ route('projects.update', $project) }}">
         @method('PATCH')

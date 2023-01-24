@@ -13,8 +13,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/quienes-somos', 'about')->name('about');
 
 // RUTAS DE PORFOLIO
-// Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
-// Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
+
 Route::get('/portafolio', 'App\Http\Controllers\ProjectController@index' ) ->name('projects.index');
 Route::get('/portafolio/crear', 'App\Http\Controllers\ProjectController@create') ->name('projects.create');
 
@@ -26,8 +25,13 @@ Route::get('/portafolio/{project}', 'App\Http\Controllers\ProjectController@show
 
 Route::delete('/portafolio/{project}', 'App\Http\Controllers\ProjectController@destroy') ->name('projects.destroy');
 
+
+
+
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('contact', 'App\Http\Controllers\MessageController@store') -> name ('messages.store');
+
+
 
 
 
