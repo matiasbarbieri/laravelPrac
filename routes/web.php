@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\MessagesController;
 
@@ -34,5 +35,5 @@ Route::post('contact', 'App\Http\Controllers\MessageController@store') -> name (
 
 
 
-
+Auth::routes(['register' => false] );
 
