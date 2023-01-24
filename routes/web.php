@@ -24,6 +24,8 @@ Route::patch('/portafolio/{project}', 'App\Http\Controllers\ProjectController@up
 Route::post('/portafolio', 'App\Http\Controllers\ProjectController@store') ->name('projects.store');
 Route::get('/portafolio/{project}', 'App\Http\Controllers\ProjectController@show') ->name('projects.show');
 
+Route::delete('/portafolio/{project}', 'App\Http\Controllers\ProjectController@destroy') ->name('projects.destroy');
+
 Route::view('/contacto', 'contact')->name('contact');
 Route::post('contact', 'App\Http\Controllers\MessageController@store') -> name ('messages.store');
 
