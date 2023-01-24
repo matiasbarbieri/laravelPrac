@@ -18,10 +18,10 @@ class MessageController extends Controller
         ]);
 
         //enviar el email
-        //Mail::to('matias.nbarbieri@gmail.com')->queue(new MessageReceived($message));
+        Mail::to('matias.nbarbieri@gmail.com')->queue(new MessageReceived($message));
 
         //provisorio para ver el mail enviado en el navegador
-        return new MessageReceived($message);
+        // return new MessageReceived($message);
 
         return 'Mensaje Enviado';
     }

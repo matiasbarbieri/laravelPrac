@@ -22,10 +22,8 @@ Route::post('/portafolio', 'App\Http\Controllers\ProjectController@store') ->nam
 
 Route::get('/portafolio/{project}', 'App\Http\Controllers\ProjectController@show') ->name('projects.show');
 
-
-
 Route::view('/contacto', 'contact')->name('contact');
-Route::post('contact', [MessageController::class, 'store']) -> name ('messages.store');
+Route::post('contact', 'App\Http\Controllers\MessageController@store') -> name ('messages.store');
 
 
 
