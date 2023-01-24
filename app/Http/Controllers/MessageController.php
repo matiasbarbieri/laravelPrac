@@ -15,6 +15,8 @@ class MessageController extends Controller
             'email' => 'required|email',
             'subject' => 'required',
             'content' => 'required|min:3'
+        ], [
+            'name.required' => __('I need your name'),
         ]);
 
         //enviar el email
