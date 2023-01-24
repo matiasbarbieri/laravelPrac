@@ -18,11 +18,11 @@
 
     <form method="POST" action="{{ route('projects.store') }}">
         @csrf
-        <input type="text" name="title" placeholder="Titulo del proyecto" >
+        <input type="text" name="title" placeholder="Titulo del proyecto" value="{{ old('title') }}">
         <br>
-        <input type="text" name="url" placeholder="Url del proyecto" >
+        <input type="text" name="url" placeholder="Url del proyecto" value="{{ old('url') }}">
         <br>
-        <textarea name="description" placeholder="Descripción del proyecto"></textarea>
+        <textarea name="description" placeholder="Descripción del proyecto"> {{ old('description') }} </textarea>
         <br>
         <button>Guardar</button>
     </form>
