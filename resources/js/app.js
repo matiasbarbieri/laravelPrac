@@ -7,6 +7,8 @@
 import './bootstrap';
 import { createApp } from 'vue';
 
+// alert('Hello from app.js');
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -37,3 +39,4 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+
