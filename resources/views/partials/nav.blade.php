@@ -25,9 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{ setActive('login')}}" href="{{ route('login') }}">Login</a> </li>
                 @else
-                <li>
-                    <a href="#" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Cerrar sesión</a></li>
                 @endguest
             </ul>
         </div>

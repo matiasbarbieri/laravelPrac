@@ -11,7 +11,7 @@ use App\Http\Controllers\MessagesController;
 
 
 Route::view('/', 'home')->name('home');
-Route::view('/quienes-somos', 'about')->name('about');
+Route::view('/quien-soy', 'about')->name('about');
 
 // RUTAS DE PORFOLIO
 

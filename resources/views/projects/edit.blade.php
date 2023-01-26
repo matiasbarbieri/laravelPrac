@@ -3,14 +3,19 @@
 @section('title', 'Editar proyecto')
 
 @section('content')
-    <h1>Editar proyecto</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-6 mx-auto">
 
-    @include('partials.session-status')
-
-
-    <form method="POST" action="{{ route('projects.update', $project) }}">
-        @method('PATCH')
-        @include('projects._form', ['btnText' => 'Actualizar'])
-    </form>
+            @include('partials.session-status')
+            <form class="bg-white py-3 px-4 shadow rounded" method="POST" action="{{ route('projects.update', $project) }}">
+                @method('PATCH')
+                <h1 class="display-5" >Editar proyecto</h1>
+                <hr>
+                @include('projects._form', ['btnText' => 'Actualizar'])
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
 
