@@ -12,6 +12,7 @@
 
             <form class="bg-white py-3 px-4 shadow rounded"
                 method="POST"
+                enctype="multipart/form-data"
                 action="{{ route('projects.store') }}">
                 <h1 class="display-5">Crear proyecto</h1>
                 <hr>

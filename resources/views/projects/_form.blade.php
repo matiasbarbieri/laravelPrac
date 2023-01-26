@@ -1,5 +1,17 @@
 @csrf
 
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+    </div>
+    <div class="custom-file">
+      <input name="image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+    </div>
+  </div>
+
+
 <div class="form-group">
     <label for="title"></label>
     <input class="form-control bg-light shadow-sm border-0"
@@ -33,4 +45,5 @@
     {{ $btnText }}
 </button>
 <a class="btn btn-link btn-block" href="{{ route('projects.index')}} ">Cancelar</a>
+
 
