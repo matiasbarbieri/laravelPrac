@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Validation\Rule;
 class SaveProjectRequest extends FormRequest
 {
     /**
@@ -23,9 +23,13 @@ class SaveProjectRequest extends FormRequest
      */
     public function rules()
     {
+        // Obtiene el proyecto que se esta editando
         return [
             'title' => 'required',
-            'url' => 'required',
+            'url' => [
+                'required',
+                Rule::unique('projects')->ignore($this->route('project')) // Ignora el proyecto que se esta editando
+            ],
             'description' => 'required'
         ];
     }
