@@ -1,15 +1,23 @@
 @csrf
 
+@if ($project->image)
+    <img class="card-img-top mb-2" src="/storage/{{ $project->image }}" alt="{{ $project->title }}">
+@endif
 
 <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
     </div>
     <div class="custom-file">
-      <input name="image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      <input name="image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon02">
     </div>
-  </div>
+</div>
+
+{{-- <div class="custom-file">
+    <input name="image" type="file" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+</div> --}}
+
 
 
 <div class="form-group">
