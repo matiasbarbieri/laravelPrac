@@ -30,6 +30,7 @@ class SaveProjectRequest extends FormRequest
                 'required',
                 Rule::unique('projects')->ignore($this->route('project')) // Ignora el proyecto que se esta editando
             ],
+            'image' => ['required', 'image'],
             'description' => 'required'
         ];
     }

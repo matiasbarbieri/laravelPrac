@@ -47,7 +47,9 @@ class ProjectController extends Controller
 
         $project = new Project( $request ->validated() );
 
-        $project->image = $request->file('image')->store('images', 'public');
+        if ($request->hasFile('image')) {
+            $project->image = $request->file('image')->store('images', 'public');
+        }
 
         $project->save();
 
