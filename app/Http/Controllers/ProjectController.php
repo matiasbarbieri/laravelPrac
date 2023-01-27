@@ -44,9 +44,10 @@ class ProjectController extends Controller
 
     public function store(SaveProjectRequest $request)
     {
-        $project = new Project($request ->validated());
 
-        $project->image = $request->file('image')->store('images');
+        $project = new Project( $request ->validated() );
+
+        $project->image = $request->file('image')->store('images', 'public');
 
         $project->save();
 

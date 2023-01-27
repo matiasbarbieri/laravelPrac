@@ -21,12 +21,15 @@
                 <a class="text-secondary d-flex justify-content-between align-items-center"
                     href="{{ route('projects.show', $project) }}"
                 >
-                    <span class="font-weight-bold">
-                        {{ $project->title }}
-                    </span>
-                    <span class="text-black-50">
-                        {{ $project->created_at->format ('d/m/Y')  }}
-                    </span>
+                @if ($project->image)
+                    <img src="/storage/{{ $project->image }}" alt="{{ $project->title }}">
+                @endif
+                <span class="font-weight-bold">
+                    {{ $project->title }}
+                </span>
+                <span class="text-black-50">
+                    {{ $project->created_at->format ('d/m/Y')  }}
+                </span>
 
                 </a>
             </li>
@@ -39,4 +42,6 @@
     </ul>
 </div>
 @endsection
+
+
 
