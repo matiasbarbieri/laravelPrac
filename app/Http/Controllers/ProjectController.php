@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Http\Request;
 use App\Models\Project;
-use App\Http\Requests\SaveProjectRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
-
+use App\Http\Requests\SaveProjectRequest;
 class ProjectController extends Controller
 {
 
@@ -74,7 +71,6 @@ class ProjectController extends Controller
 
             $project->image = $request->file('image')->store('images', 'public');
 
-            $project->save();
 
         } else {
             $project->update( array_filter($request->validated()) );
