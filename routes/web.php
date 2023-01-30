@@ -21,6 +21,8 @@ Route::view('/quien-soy', 'about')->name('about');
 Route::get('/portafolio', 'App\Http\Controllers\ProjectController@index' ) ->name('projects.index');
 Route::get('/portafolio/crear', 'App\Http\Controllers\ProjectController@create') ->name('projects.create');
 
+Route::get('categorias/{category}', 'App\Http\Controllers\CategoryController@show') ->name('categories.show');
+
 Route::get('/portafolio/{project}/editar', 'App\Http\Controllers\ProjectController@edit') ->name('projects.edit');
 Route::patch('/portafolio/{project}', 'App\Http\Controllers\ProjectController@update') ->name('projects.update');
 
