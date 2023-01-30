@@ -6,6 +6,8 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
+use App\Models\Category;
+
 class ProjectController extends Controller
 {
 
@@ -36,7 +38,8 @@ class ProjectController extends Controller
     public function create()
     {
         return view ('projects.create', [
-            'project' => new Project
+            'project' => new Project,
+            'categories' => Category::pluck('name', 'id')
         ]);
     }
 
@@ -57,7 +60,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         return view ('projects.edit', [
-            'project' => $project
+            'project' => $project,
+            'categories' => Category::pluck('name', 'id')
         ]);
     }
 
