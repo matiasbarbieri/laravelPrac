@@ -35,5 +35,15 @@ Route::post('contact', 'App\Http\Controllers\MessageController@store') -> name (
 
 
 
-Auth::routes(['register' => false] );
+Auth::routes(['register' => true] );
+Route::post('/register', 'Auth\RegisterController@register');
+
+Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register');
+
+
+
+
+
+
 
