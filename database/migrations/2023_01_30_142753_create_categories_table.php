@@ -22,7 +22,10 @@ return new class extends Migration
         Schema::table('projects', function(Blueprint $table) {
             $table->unsignedBigInteger('category_id')->nullable()->after('id');
 
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')
+            ->onDelete('set null')
+            ->onUpdate('cascade')
+            ;
 
         });
     }
@@ -34,6 +37,10 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('projects', function(Blueprint $table) {
+            $table->dropForeign(['projects_category_id_foreign']);
+            $table->dropColumn('category_id');
+        });
         Schema::dropIfExists('categories');
     }
 };
