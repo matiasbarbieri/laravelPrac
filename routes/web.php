@@ -9,6 +9,9 @@ use App\Http\Controllers\MessagesController;
 
 
 
+// DB::listen(function($query) {
+//     var_dump($query->sql);
+// });
 
 Route::view('/', 'home')->name('home');
 Route::view('/quien-soy', 'about')->name('about');
