@@ -37,10 +37,14 @@ class ProjectController extends Controller
 
     public function create()
     {
+
+        $this->authorize('create-projects'); //autoriza a crear proyectos en el auth service provider
+
         return view ('projects.create', [
             'project' => new Project,
             'categories' => Category::pluck('name', 'id')
         ]);
+
     }
 
     public function store(SaveProjectRequest $request)
