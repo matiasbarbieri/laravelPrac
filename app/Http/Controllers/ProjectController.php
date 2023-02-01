@@ -38,10 +38,11 @@ class ProjectController extends Controller
     public function create()
     {
 
-        $this->authorize('create-projects'); //autoriza a crear proyectos en el auth service provider
+        $this->authorize('create', $project = new Project); //autoriza a crear proyectos en el auth service provider
+
 
         return view ('projects.create', [
-            'project' => new Project,
+            'project' => $project,
             'categories' => Category::pluck('name', 'id')
         ]);
 
@@ -51,6 +52,8 @@ class ProjectController extends Controller
     {
 
         $project = new Project( $request ->validated() );
+
+        $this->authorize('create', $project); //autoriza a crear proyectos en el auth service provider
 
         if ($request->hasFile('image')) {
             $project->image = $request->file('image')->store('images', 'public');
@@ -63,6 +66,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
+        $this->authorize('update', $project); //autoriza a crear proyectos en el auth service provider
         return view ('projects.edit', [
             'project' => $project,
             'categories' => Category::pluck('name', 'id')
@@ -71,6 +75,9 @@ class ProjectController extends Controller
 
     public function update(Project $project, SaveProjectRequest $request )
     {
+
+        $this->authorize('update', $project = new Project); //autoriza a crear proyectos en el auth service provider
+
         if ($request->hasFile('image')) {
 
             Storage::delete($project->image);
@@ -89,6 +96,7 @@ class ProjectController extends Controller
 
     public function destroy(Project $project)
     {
+        $this->authorize('delete', $project); //autoriza a crear proyectos en el auth service provider
         Storage::delete($project->image);
         $project->delete();
 

@@ -14,7 +14,7 @@
             <h1 class="display-5 mb-0">@lang('Projects')</h1>
         @endisset
 
-        @can('create-projects')
+        @can('create', new App\Models\Project)
             <a class="btn btn-primary"
                 href="{{ route('projects.create') }}">
                 Crear proyecto
